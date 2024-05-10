@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t saidhstu/docker-react -f Dockerfile.dev .
+
+script:
+  - docker run saidhstu/docker-react num run test -- --coverage
